@@ -349,6 +349,7 @@ html {
 }
 
 /* Personalización de variables DF-Messenger */
+/* Personalización de variables DF-Messenger (VERSIÓN NARANJA) */
 df-messenger {
     position: absolute;
     top: 0;
@@ -360,40 +361,43 @@ df-messenger {
     --df-messenger-font-color: var(--text-primary);
     --df-messenger-font-family: 'Inter', sans-serif;
 
-    /* Ocultamos el header por defecto */
+    /* Ocultamos el header por defecto (NO TOCAR) */
     --df-messenger-titlebar-background: transparent;
     --df-messenger-titlebar-padding: 0px;
     --df-messenger-titlebar-title-font-size: 0px;
     --df-messenger-titlebar-icon-display: none;
-    /* Forzar ocultamiento del header por defecto */
     --df-messenger-titlebar-display: none;
     --df-messenger-header-height: 0;
     --df-messenger-titlebar-height: 0;
-    /* Colores del Chat */
+    
+    /* Fondo del Chat general */
     --df-messenger-chat-background: #ffffff;
 
-    /* Mensajes */
-    --df-messenger-message-user-background: var(--tolima-primary);
-    /* TU MENSAJE (Vinotinto) */
+    /* MENSAJES */
+    /* Burbuja del usuario: Naranja vibrante institucional */
+    --df-messenger-message-user-background: #F57C00; 
+    /* Texto del usuario: Blanco para que contraste bien con el naranja */
     --df-messenger-message-user-font-color: #ffffff;
-    --df-messenger-message-bot-background: #f0f4f8;
+    /* Burbuja de AMAIA: Un durazno/naranja súper clarito */
+    --df-messenger-message-bot-background: #FFF3E0; 
     --df-messenger-message-bot-font-color: var(--text-primary);
 
-    /* Área de Input (Parte inferior) */
-    --df-messenger-input-background: var(--tolima-primary-pale);
+    /* ÁREA DE INPUT (Parte inferior donde el usuario escribe) */
+    /* Fondo detrás de la cajita de texto: Naranja pastel */
+    --df-messenger-input-background: #FFE0B2; 
     --df-messenger-input-box-background: #ffffff;
     --df-messenger-input-font-color: var(--text-primary);
 
-    /* ICONOS Y BORDES (VINOTINTO) */
-    --df-messenger-send-icon: var(--tolima-primary);
-    /* Icono enviar */
+    /* ICONOS Y BORDES (NARANJA) */
+    /* Icono enviar en naranja */
+    --df-messenger-send-icon: #F57C00; 
     --df-messenger-input-box-border: 1px solid var(--border-color);
-    /* Borde reposo */
-    --df-messenger-input-box-focus-border: 2px solid var(--tolima-accent);
-    /* Borde al escribir */
+    /* Borde naranja al hacer clic para escribir */
+    --df-messenger-input-box-focus-border: 2px solid #F57C00; 
 
-    --df-messenger-input-border-top: 1px solid rgba(11, 37, 69, 0.1);
-    --df-messenger-send-icon-color: var(--tolima-primary);
+    --df-messenger-input-border-top: 1px solid rgba(245, 124, 0, 0.2);
+    /* Color de la flechita de enviar */
+    --df-messenger-send-icon-color: #F57C00;
 }
 
 /* =========================================
