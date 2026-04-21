@@ -268,15 +268,27 @@ html {
 
 /* Encabezado interno del Chat */
 .chat-header {
-    /* Fondo morado/fucsia institucional */
-    background: linear-gradient(135deg, #8E24AA, #D81B60); 
+    /* Cambiamos el azul por el naranja vibrante */
+    background-color: #F57C00 !important; 
+    
+    /* El resto de la configuración para que se vea ordenado */
     color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    border-radius: 12px 12px 0 0;
+    border-radius: 12px 12px 0 0; /* Redondea solo las esquinas de arriba */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* También asegúrate de que el título dentro del header sea blanco */
+.assistant-details h2 {
+    color: #ffffff !important;
+    margin: 0;
+}
+
+.assistant-details span {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .assistant-profile {
