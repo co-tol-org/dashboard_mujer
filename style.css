@@ -267,18 +267,25 @@ html {
 }
 
 /* Encabezado interno del Chat */
+/* ELIMINAR EL ROSADO Y PONER NARANJA */
 .chat-header {
-    /* Cambiamos el azul por el naranja vibrante */
-    background-color: #F57C00 !important; 
-    
-    /* El resto de la configuración para que se vea ordenado */
-    color: #ffffff;
+    background: #F57C00 !important; /* Naranja sólido */
+    background-color: #F57C00 !important;
+    color: #ffffff !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    border-radius: 12px 12px 0 0; /* Redondea solo las esquinas de arriba */
+    border-radius: 12px 12px 0 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Asegurarnos que los iconos y botones dentro del header sean blancos */
+.chat-header button, 
+.chat-header i, 
+.assistant-details h2, 
+.assistant-details span {
+    color: #ffffff !important;
 }
 
 /* También asegúrate de que el título dentro del header sea blanco */
