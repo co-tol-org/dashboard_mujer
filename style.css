@@ -10,12 +10,12 @@
     --tolima-primary-dark: #051325;
     /* Azul Noche (Para degradados profundos) */
 
-    --tolima-accent: #225C96;
+    --tolima-accent: ##00A859;
     /* Cian Eléctrico (Reemplaza al Dorado/Gold) */
     --tolima-accent-light: #E0FCFF;
     /* Cian muy claro para fondos sutiles */
 
-    --tolima-primary-pale: #E6EEF5;
+    --tolima-primary-pale: #E0FFF0;
     /* Azul pálido para fondos secundarios */
 
     --tolima-secondary: #0056D2;
@@ -269,8 +269,13 @@ html {
 /* Encabezado interno del Chat */
 /* ELIMINAR EL ROSADO Y PONER NARANJA */
 .chat-header {
-    background: #F57C00 !important; /* Naranja sólido */
-    background-color: #F57C00 !important;
+    /* Cambiamos el Naranja por el Verde Tolima */
+    background: #00A859 !important; 
+    background-color: #00A859 !important;
+    
+    /* Si prefieres el degradado (Verde a Rosado) usa esta línea de abajo, si no, déjala borrada: */
+    /* background: linear-gradient(135deg, #00A859 0%, #FFB6C1 100%) !important; */
+
     color: #ffffff !important;
     display: flex;
     justify-content: space-between;
@@ -396,11 +401,11 @@ df-messenger {
 
     /* MENSAJES */
     /* Burbuja del usuario: Naranja vibrante institucional */
-    --df-messenger-message-user-background: #F57C00; 
+    --df-messenger-message-user-background: #00A859; 
     /* Texto del usuario: Blanco para que contraste bien con el naranja */
     --df-messenger-message-user-font-color: #ffffff;
     /* Burbuja de AMAIA: Un durazno/naranja súper clarito */
-    --df-messenger-message-bot-background: #FFF3E0; 
+    --df-messenger-message-bot-background: #FFB6C1; 
     --df-messenger-message-bot-font-color: var(--text-primary);
 
     /* ÁREA DE INPUT (Parte inferior donde el usuario escribe) */
@@ -411,7 +416,7 @@ df-messenger {
 
     /* ICONOS Y BORDES (NARANJA) */
     /* Icono enviar en naranja */
-    --df-messenger-send-icon: #F57C00; 
+    --df-messenger-send-icon: #00A859; 
     --df-messenger-input-box-border: 1px solid var(--border-color);
     /* Borde naranja al hacer clic para escribir */
     --df-messenger-input-box-focus-border: 2px solid #F57C00; 
