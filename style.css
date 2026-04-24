@@ -107,19 +107,19 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     font-size: 1.1rem;
-    color: var(--tolima-primary);
+    color: #E67E22;
     text-transform: uppercase;
     line-height: 1.1;
     letter-spacing: -0.02em;
 }
 
 .main-title span {
-    color: var(--tolima-secondary);
+    color: D35400;
     /* Azul más claro para "Resuelve" */
 }
 
 .main-title .highlight {
-    color: #005fcc;
+    color: #D35400;
     /* Un tono Cian un poco más oscuro para texto blanco */
 }
 
@@ -127,7 +127,7 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 0.75rem;
-    color: #00B8CC;
+    color: #E67E22;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     margin-top: 2px;
