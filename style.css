@@ -76,7 +76,7 @@ html {
     box-shadow: var(--shadow-header);
     z-index: 50;
     position: relative;
-    border-bottom: 3px solid var(--tolima-accent);
+    border-bottom: 3px solid #E67E22;
 }
 
 /* Área de Branding (Izquierda) */
