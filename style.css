@@ -1,510 +1,155 @@
-/* 
-   Variables CSS
-   Definimos los colores corporativos y variables reutilizables 
-   para facilitar el mantenimiento del tema.
-*/
 :root {
-
+    /* Nueva Paleta: Azul Navy Oscuro y Naranja */
     --tolima-primary: #0B2545;
-    /* Azul Navy Oscuro (Fondo escudo/textos oscuros) */
     --tolima-primary-dark: #051325;
-    /* Azul Noche (Para degradados profundos) */
-
     --tolima-accent: #225C96;
-    /* Cian Eléctrico (Reemplaza al Dorado/Gold) */
     --tolima-accent-light: #E0FCFF;
-    /* Cian muy claro para fondos sutiles */
-
     --tolima-primary-pale: #E6EEF5;
-    /* Azul pálido para fondos secundarios */
-
     --tolima-secondary: #0056D2;
-    /* Azul Rey intermedio (Para botones o énfasis) */
 
-    /* Mapeo a tus variables antiguas para mantener compatibilidad con tu estructura */
-    --tolima-vinotinto: var(--tolima-primary);
-    --tolima-vinotinto-dark: var(--tolima-primary-dark);
-    --tolima-gold: var(--tolima-accent);
-    --tolima-gold-light: var(--tolima-accent-light);
-    --tolima-neutral: #F0F7FF;
-
-    /* Colores UI */
     --bg-body: #F4F8FB;
     --surface: #ffffff;
     --text-primary: #0B2545;
     --text-secondary: #475569;
     --border-color: #CBD5E1;
 
-    /* Sombras y Efectos */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(11, 37, 69, 0.1), 0 2px 4px -1px rgba(11, 37, 69, 0.06);
     --shadow-header: 0 4px 20px rgba(0, 229, 255, 0.15);
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-/* 
-   Reset básico y configuración del cuerpo 
-   Usamos Flexbox en dirección columna para permitir 
-   que el header esté arriba y el contenido ocupe el resto.
+/* Estructura perfecta de Turismo (Bloquea scroll global)
 */
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-body);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+body, html {
+    margin: 0; padding: 0; height: 100vh;
+    font-family: 'Inter', sans-serif; background-color: var(--bg-body);
+    overflow: hidden; display: flex; flex-direction: column;
 }
 
-/* =========================================
-2. HEADER (ENCABEZADO)
-========================================= */
-
+/* HEADER */
 .app-header {
-    height: 72px;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-    box-shadow: var(--shadow-header);
-    z-index: 50;
-    position: relative;
-    border-bottom: 3px solid #E67E22;
+    height: 72px; background: #fff; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px; box-shadow: var(--shadow-header); z-index: 50; position: relative; 
+    border-bottom: 3px solid #E67E22; /* Borde naranja */
 }
+.branding { display: flex; align-items: center; gap: 16px; }
+.escudo-img { height: 60px; width: 165px; display: flex; align-items: center; justify-content: center; }
+.titles { display: flex; flex-direction: column; justify-content: center; }
 
-/* Área de Branding (Izquierda) */
-.branding {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
+/* Textos del header en Naranja */
+.main-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: #E67E22; text-transform: uppercase; line-height: 1.1; }
+.sub-title { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.75rem; color: #E67E22; text-transform: uppercase; margin-top: 2px; }
 
-.escudo-img {
-    height: 60px;
-    width: 165px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--tolima-accent);
-    font-weight: bold;
-    font-family: 'Montserrat';
-}
+.header-info { display: flex; align-items: center; gap: 20px; }
+.system-status { display: flex; align-items: center; gap: 8px; background: rgba(0, 229, 255, 0.1); padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #007ca3; border: 1px solid rgba(0, 229, 255, 0.2); }
+.status-indicator { width: 8px; height: 8px; background-color: #00e5ff; border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4); } 50% { box-shadow: 0 0 0 6px rgba(0, 229, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); } }
 
-.titles {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+/* LAYOUT PRINCIPAL (PC) */
+.main-layout { display: flex; flex: 1; height: calc(100vh - 72px); width: 100%; overflow: hidden; background-color: var(--bg-body); }
 
-.main-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: #E67E22;
-    text-transform: uppercase;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-}
+/* DASHBOARD PANEL */
+.dashboard-panel { flex: 1; position: relative; background: #fff; margin: 16px; margin-right: 0; border-radius: 12px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); overflow: auto; display: flex; flex-direction: column; }
+.iframe-wrapper { width: 100%; height: 100%; position: relative; z-index: 1; }
+.iframe-wrapper iframe { width: 100%; height: 100%; border: none; }
+.dashboard-loader { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fff; z-index: 0; color: var(--text-secondary); }
+.spinner { width: 40px; height: 40px; border: 3px solid var(--tolima-accent-light); border-top-color: var(--tolima-accent); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 12px; }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-.main-title span {
-    color: D35400;
-    /* Azul más claro para "Resuelve" */
-}
+/* CHAT PANEL (DISEÑO PERSONALIZADO) */
+.chat-panel { width: 300px; min-width: 280px; display: flex; flex-direction: column; background: transparent; padding: 16px; }
+.chat-card { background: var(--surface); flex: 1; border-radius: 12px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden; position: relative; }
 
-.main-title .highlight {
-    color: #D35400;
-    /* Un tono Cian un poco más oscuro para texto blanco */
-}
+/* Encabezado del Chat en Naranja con Letras Blancas */
+.chat-header { background: #F57C00; padding: 16px 20px; color: #ffffff; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #D35400; }
+.assistant-profile { display: flex; align-items: center; gap: 12px; }
+.avatar-circle { width: 42px; height: 42px; background: rgba(255, 255, 255, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.8); }
+.avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
+.assistant-details h2 { margin: 0; font-size: 0.95rem; font-weight: 700; font-family: 'Montserrat', sans-serif; color: #ffffff; }
+.assistant-details span { font-size: 0.75rem; opacity: 0.9; font-weight: 600; color: #ffffff; }
+.btn-reset { background: rgba(0, 0, 0, 0.1); border: none; color: #ffffff; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.btn-reset:hover { background: rgba(0,0,0,0.2); transform: rotate(-15deg); }
+.messenger-wrapper { flex: 1; position: relative; background: #fff; }
 
-.sub-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 0.75rem;
-    color: #E67E22;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-top: 2px;
-}
-
-/* Área de Estado/Info (Derecha) */
-.header-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.system-status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(0, 229, 255, 0.1);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #007ca3;
-    border: 1px solid rgba(0, 229, 255, 0.2);
-}
-
-.status-indicator {
-    width: 8px;
-    height: 8px;
-    background-color: #00e5ff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4);
-    }
-
-    50% {
-        box-shadow: 0 0 0 6px rgba(0, 229, 255, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
-    }
-}
-
-/* =========================================
-3. LAYOUT PRINCIPAL (SPLIT SCREEN)
-========================================= */
-
-.main-layout {
-    display: flex;
-    flex: 1;
-    height: calc(100vh - 72px);
-    overflow: hidden;
-    background-color: var(--bg-body);
-}
-
-/* --- Panel Izquierdo: Dashboard --- */
-.dashboard-panel {
-    flex: 1;
-    position: relative;
-    background: #fff;
-    margin: 16px;
-    margin-right: 0;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.dashboard-panel iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    position: relative;
-    z-index: 1;
-}
-
-/* Loader para el iframe */
-.dashboard-loader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    z-index: 0;
-    /* Detrás del iframe cuando cargue */
-    color: var(--text-secondary);
-}
-
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 3px solid var(--tolima-neutral);
-    border-top-color: var(--tolima-accent);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-bottom: 12px;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* --- Panel Derecho: Chat AMAIA --- */
-.chat-panel {
-    width: 300px;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    background: transparent;
-    padding: 16px;
-}
-
-.chat-card {
-    background: var(--surface);
-    flex: 1;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Encabezado interno del Chat */
-/* ELIMINAR EL ROSADO Y PONER NARANJA */
-.chat-header {
-    background: #F57C00 !important; /* Naranja sólido */
-    background-color: #F57C00 !important;
-    color: #ffffff !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    border-radius: 12px 12px 0 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Asegurarnos que los iconos y botones dentro del header sean blancos */
-.chat-header button, 
-.chat-header i, 
-.assistant-details h2, 
-.assistant-details span {
-    color: #ffffff !important;
-}
-
-/* También asegúrate de que el título dentro del header sea blanco */
-.assistant-details h2 {
-    color: #ffffff !important;
-    margin: 0;
-}
-
-.assistant-details span {
-    color: rgba(255, 255, 255, 0.8) !important;
-}
-
-.assistant-profile {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.avatar-circle {
-    width: 42px;
-    height: 42px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--tolima-accent);
-    font-size: 24px;
-    border: 2px solid var(--tolima-accent);
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
-    overflow: hidden;
-    /* Asegura que la imagen no se salga */
-}
-
-.avatar-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.assistant-details h2 {
-    margin: 0;
-    font-size: 0.95rem;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.5px;
-}
-
-.assistant-details span {
-    font-size: 0.75rem;
-    opacity: 0.9;
-    font-weight: 300;
-    color: var(--tolima-accent-light);
-}
-
-/* Botón de Nueva Sesión */
-.btn-reset {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-}
-
-.btn-reset:hover {
-    background: var(--tolima-accent);
-    color: var(--tolima-primary);
-    transform: rotate(-15deg);
-}
-
-/* Contenedor del componente DF-Messenger */
-.messenger-wrapper {
-    flex: 1;
-    position: relative;
-    background: #fff;
-}
-
-/* Personalización de variables DF-Messenger */
-/* Personalización de variables DF-Messenger (VERSIÓN NARANJA) */
+/* CONFIGURACIÓN DF-MESSENGER (TEMA NARANJA/DURAZNO) */
 df-messenger {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;
+    
     --df-messenger-font-color: var(--text-primary);
     --df-messenger-font-family: 'Inter', sans-serif;
-
-    /* Ocultamos el header por defecto (NO TOCAR) */
-    --df-messenger-titlebar-background: transparent;
-    --df-messenger-titlebar-padding: 0px;
-    --df-messenger-titlebar-title-font-size: 0px;
-    --df-messenger-titlebar-icon-display: none;
-    --df-messenger-titlebar-display: none;
-    --df-messenger-header-height: 0;
-    --df-messenger-titlebar-height: 0;
     
-    /* Fondo del Chat general */
+    /* Magia para ocultar el header nativo */
+    --df-messenger-titlebar-display: none; 
+    --df-messenger-titlebar-title-font-size: 0px;
+    --df-messenger-titlebar-padding: 0px;
+    --df-messenger-titlebar-height: 0px;
+    --df-messenger-header-height: 0px;
+    
     --df-messenger-chat-background: #ffffff;
-
-    /* MENSAJES */
-    /* Burbuja del usuario: Naranja vibrante institucional */
-    --df-messenger-message-user-background: #F57C00; 
-    /* Texto del usuario: Blanco para que contraste bien con el naranja */
+    --df-messenger-message-user-background: #F57C00;
     --df-messenger-message-user-font-color: #ffffff;
-    /* Burbuja de AMAIA: Un durazno/naranja súper clarito */
-    --df-messenger-message-bot-background: #FFF3E0; 
+    --df-messenger-message-bot-background: #FFF3E0;
     --df-messenger-message-bot-font-color: var(--text-primary);
-
-    /* ÁREA DE INPUT (Parte inferior donde el usuario escribe) */
-    /* Fondo detrás de la cajita de texto: Naranja pastel */
-    --df-messenger-input-background: #FFE0B2; 
+    
+    --df-messenger-input-background: #FFE0B2;
     --df-messenger-input-box-background: #ffffff;
-    --df-messenger-input-font-color: var(--text-primary);
-
-    /* ICONOS Y BORDES (NARANJA) */
-    /* Icono enviar en naranja */
     --df-messenger-send-icon: #F57C00; 
     --df-messenger-input-box-border: 1px solid var(--border-color);
-    /* Borde naranja al hacer clic para escribir */
     --df-messenger-input-box-focus-border: 2px solid #F57C00; 
-
     --df-messenger-input-border-top: 1px solid rgba(245, 124, 0, 0.2);
-    /* Color de la flechita de enviar */
-    --df-messenger-send-icon-color: #F57C00;
 }
 
+/* BOTÓN FLOTANTE (Oculto en PC por defecto) */
+.chat-toggle-btn { display: none; }
+
+
 /* =========================================
-   4. DISEÑO RESPONSIVO (CORREGIDO)
+   DISEÑO PARA CELULARES (LA ESTRUCTURA DE TURISMO)
 ========================================= */
-
 @media (max-width: 1024px) {
+    .app-header { height: auto; padding: 10px 15px; flex-wrap: wrap; }
+    .escudo-img { height: 45px; }
+    .main-title { font-size: 0.85rem; line-height: 1.2; }
+    .sub-title, .header-info { display: none !important; }
 
-    /* 1. FORZAR SCROLL (IMPORTANTE) */
-    body,
-    html {
-        height: auto !important;
-        /* Deja que la página crezca lo necesario */
-        min-height: 100vh;
-        /* Al menos el alto de la pantalla */
-        overflow-y: auto !important;
-        /* HABILITA EL DESLIZAMIENTO CON EL DEDO */
-        overflow-x: hidden;
-        /* Evita movimiento lateral */
-        display: block;
-        /* Quitamos el flex del body que bloqueaba todo */
-    }
-
-    /* 2. DESBLOQUEAR EL CONTENEDOR PRINCIPAL */
-    .main-layout {
-        height: auto !important;
-        /* Ya no tiene altura fija */
-        overflow: visible !important;
-        /* Deja que el contenido se muestre */
-        display: flex;
-        flex-direction: column;
-        /* Pone uno debajo del otro */
-        padding-bottom: 40px;
-        /* Espacio al final para que no se corte */
-    }
-
-    /* 3. ARREGLO DEL ENCABEZADO (HEADER) */
-    .app-header {
-        height: auto;
-        /* Altura flexible */
-        padding: 10px 15px;
-        /* Menos relleno */
-        flex-wrap: wrap;
-        /* Permite acomodar elementos si no caben */
-    }
-
-    .branding {
-        max-width: 100%;
-    }
-
-    /* Ajustamos el logo para que no sea gigante */
-    .escudo-img {
-        height: 45px;
-    }
-
-    /* Texto del título más pequeño y limpio */
-    .main-title {
-        font-size: 0.85rem;
-        line-height: 1.2;
-    }
-
-    /* OCULTAMOS ELEMENTOS QUE ESTORBAN EN EL CELULAR */
-    .sub-title,
-    .header-info {
-        display: none !important;
-        /* Adiós al subtítulo y al estado "En línea" en celular */
-    }
-
-    /* 4. PANELES (Dashboard y Chat) */
+    /* El Dashboard ocupa todo el espacio. El body se queda fijo. */
     .dashboard-panel {
-        height: 500px;
-        /* Altura fija segura para el gráfico */
-        width: 100%;
-        margin: 0;
-        margin-bottom: 20px;
-        border-radius: 0;
-        /* Quitamos bordes redondos para ganar espacio */
-        border-left: none;
-        border-right: none;
+        width: 100%; height: calc(100vh - 65px) !important; margin: 0; border-radius: 0; border: none;
+        overflow: auto !important; -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Wrapper fuerza al dashboard a crear scroll interno */
+    .iframe-wrapper {
+        width: 1200px !important; min-width: 1200px !important; 
+        height: 800px !important; min-height: 800px !important;
     }
 
+    /* 1. Muestra el botón flotante en la esquina inferior */
+    .chat-toggle-btn {
+        display: flex; position: fixed; bottom: 20px; right: 20px;
+        width: 60px; height: 60px; border-radius: 50%;
+        background: #fff; border: 3px solid #F57C00;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000;
+        cursor: pointer; align-items: center; justify-content: center;
+        padding: 0; overflow: hidden; transition: transform 0.2s;
+    }
+    .chat-toggle-btn img { width: 100%; height: 100%; object-fit: cover; }
+    .chat-toggle-btn:active { transform: scale(0.9); }
+
+    /* 2. Convierte el panel de chat en una ventana emergente oculta */
     .chat-panel {
-        height: 600px;
-        /* Altura suficiente para chatear */
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 50px;
+        position: fixed; bottom: 90px; right: 20px;
+        width: calc(100% - 40px); max-width: 380px; height: 500px;
+        padding: 0; margin: 0; z-index: 999;
+        
+        /* Efecto de esconder / mostrar */
+        opacity: 0; pointer-events: none;
+        transform: translateY(20px); transition: all 0.3s ease;
+    }
+    
+    /* 3. Clase activa que se enciende con el botón */
+    .chat-panel.open {
+        opacity: 1; pointer-events: auto; transform: translateY(0);
     }
 }
