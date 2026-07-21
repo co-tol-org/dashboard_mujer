@@ -8,7 +8,8 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>AMAIA - Gobernación del Tolima (Secretaría de la Mujer)</title>
-    <link rel="icon" type="image/png" href="https://storage.googleapis.com/gdt-icons/Amaia%2001.png">
+    <!-- Favicon actualizado -->
+    <link rel="icon" type="image/jpeg" href="https://storage.googleapis.com/gdt-icons/Amaia%2002.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,11 +24,12 @@
 </head>
 
 <body>
+    <!-- 1. Encabezado Oficial -->
     <header class="app-header">
         <div class="branding">
             <img src="https://storage.googleapis.com/gdt-icons/Gobernaci%C3%B3n%20del%20Tolima%20Icon.png" alt="Escudo Gobernación del Tolima" class="escudo-img">
             <div class="titles">
-                <span class="main-title">Sistema de información estadístico del tolima - Secretaría de la Mujer</span>
+                <span class="main-title">Sistema de información estadístico del Tolima - Secretaría de la Mujer</span>
                 <span class="sub-title">Sistema Inteligente de Consultas de Datos</span>
             </div>
         </div>
@@ -40,8 +42,10 @@
         </div>
     </header>
 
+    <!-- 2. Contenido Principal -->
     <main class="main-layout">
 
+        <!-- Panel Izquierdo: Dashboard -->
         <section class="dashboard-panel">
             <div class="dashboard-loader">
                 <div class="spinner"></div>
@@ -49,16 +53,19 @@
             </div>
 
             <div class="iframe-wrapper">
+                <!-- Enlace de tu Dashboard -->
                 <iframe src="https://datastudio.google.com/embed/reporting/ac6d5f2c-ffc8-435e-a0ec-0a845591621c/page/p_loeasw4jyd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
             </div>
         </section>
 
+        <!-- Panel Derecho: Amaia -->
         <aside class="chat-panel" id="chat-panel">
             <div class="chat-card">
 
                 <div class="chat-header">
                     <div class="assistant-profile">
                         <div class="avatar-circle">
+                            <!-- Avatar de Amaia 02 -->
                             <img src="https://storage.googleapis.com/gdt-icons/Amaia%2002.jpg" alt="AMAIA Avatar" width="60" height="60">
                         </div>
                         <div class="assistant-details">
@@ -73,6 +80,7 @@
                 </div>
 
                 <div class="messenger-wrapper">
+                    <!-- ID del bot de Mujer -->
                     <df-messenger location="us-central1" project-id="co-tol-prd" agent-id="ac607d2c-0a85-4aa9-a6f0-c8c6859e87bd" allow-feedback="all" language-code="es" max-query-length="-1" expand="true" intent="Hola">
                         <df-messenger-chat chat-title="AMAIA" bot-writing-text="Escribiendo..." placeholder-text="Tu consulta..."></df-messenger-chat>
                     </df-messenger>
@@ -81,9 +89,17 @@
         </aside>
     </main>
 
+    <!-- 3. Botón Flotante para Celulares -->
     <button id="chat-toggle-btn" class="chat-toggle-btn">
+        <!-- Avatar de Amaia 02 en el botón -->
         <img src="https://storage.googleapis.com/gdt-icons/Amaia%2002.jpg" alt="AMAIA">
     </button>
 
+    <!-- 4. Script para abrir/cerrar el chat en móviles -->
     <script>
-        document.getElementById('chat-toggle-btn').
+        document.getElementById('chat-toggle-btn').addEventListener('click', function() {
+            document.getElementById('chat-panel').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
